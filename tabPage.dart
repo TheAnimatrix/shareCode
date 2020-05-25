@@ -37,7 +37,7 @@ class _TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
     countingService.close();
     super.dispose();
   }
-  //
+  
   final ColorTween fabColorChanger = ColorTween(begin: Colors.black,end: Colors.orangeAccent);
   @override
   Widget build(BuildContext context) {
@@ -46,14 +46,12 @@ class _TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
         : Scaffold(
             extendBody: true,
             bottomNavigationBar: ClipRect(
-              //I'm using BackdropFilter for the blurring effect
               child: BackdropFilter(
                 filter: ImageFilter.blur(
                   sigmaX: 5.0,
                   sigmaY: 5.0,
                 ),
                 child: Opacity(
-                  //you can change the opacity to whatever suits you best
                   opacity: 0.8,
                   child: BottomAppBar(
                   notchMargin: 5,
@@ -77,7 +75,7 @@ class _TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
                     onPressed: () {
                     },
                   ),
-                                                 IconButton(
+                   IconButton(
                     iconSize: 28.0,
                     padding: EdgeInsets.only(top:12,bottom:12),
                     icon: Icon(Icons.filter_list,color: Colors.white),
@@ -93,7 +91,6 @@ class _TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
             ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.endDocked,
-            // bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.black38,items: [BottomNavigationBarItem(icon: Icon(Icons.refresh),title: Text("one")),BottomNavigationBarItem(icon: Icon(Icons.refresh),title:Text("two"))]),
             floatingActionButton: AnimatedBuilder(
               animation: _tabController.animation,
               builder: (_, child) {
@@ -124,7 +121,7 @@ class _TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
                               style: TextStyle(color: Colors.white),
                             ))
                       ],
-                      title: Text("The Countdown App",
+                      title: Text("-----------",
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white)),
                       centerTitle: true,
